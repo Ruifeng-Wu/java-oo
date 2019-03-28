@@ -18,4 +18,22 @@ public class Teacher extends Person {
     public LinkedList<Klass> getClasses() {
         return linkedList;
     }
+
+    @Override
+    public String introduce() {
+        if (linkedList.isEmpty()) {
+            return basicInfo() + " I teach No Class.";
+        } else {
+            String temp = basicInfo() + " I teach Class " + linkedList.get(0).getNumber();
+            for (int i = 1; i < linkedList.size(); i++) {
+                temp += ", " + linkedList.get(i).getNumber();
+            }
+            return temp + ".";
+        }
+
+    }
+
+    public String basicInfo() {
+        return super.introduce() + " I am a Teacher.";
+    }
 }
