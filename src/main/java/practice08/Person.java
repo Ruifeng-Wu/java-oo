@@ -42,10 +42,6 @@ public class Person {
     @Override
     public boolean equals(Object obj) {
         Person person = (Person) obj;
-        if (id == person.id) {
-            return true;
-        } else {
-            return false;
-        }
+        return id == person.id ? true : false;
     }
 }
