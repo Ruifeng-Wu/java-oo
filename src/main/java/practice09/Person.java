@@ -35,4 +35,8 @@ public class Person {
     public boolean equals(Object obj) {
         return obj instanceof Person && ((Person) obj).getId() == this.id ? true : false;
     }
+
+    public String introduce() {
+        return "My name is "+name+". I am "+age+" years old.";
+    }
 }
