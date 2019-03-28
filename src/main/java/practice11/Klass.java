@@ -37,4 +37,8 @@ public class Klass {
     public void setLeader(Person leader) {
         this.leader = leader;
     }
+
+    public void appendMember(Student student) {
+        studentList.put(student.getId(), student);
+    }
 }
