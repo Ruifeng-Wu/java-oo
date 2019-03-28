@@ -34,6 +34,9 @@ public class Klass {
         leader=jerry;
     }
 
+    public boolean isIn(Student student){
+        return number==student.getKlass().number?true:false;
+    }
     public Person getLeader() {
         return leader;
     }

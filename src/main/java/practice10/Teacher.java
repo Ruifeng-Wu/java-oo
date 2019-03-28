@@ -33,16 +33,25 @@ public class Teacher extends Person {
         if (linkedList.isEmpty()) {
             return basicInfo() + " I teach No Class.";
         } else {
-            String temp=basicInfo()+" I teach Class "+linkedList.get(0).getNumber();
+            String temp = basicInfo() + " I teach Class " + linkedList.get(0).getNumber();
             for (int i = 1; i < linkedList.size(); i++) {
-                temp+=(", "+linkedList.get(i).getNumber());
+                temp += (", " + linkedList.get(i).getNumber());
             }
-            return temp+".";
+            return temp + ".";
         }
 
     }
 
     public String basicInfo() {
         return super.introduce() + " I am a Teacher.";
+    }
+
+    public boolean isTeaching(Student jerry) {
+        for (Klass cls : linkedList) {
+            if (cls.isIn(jerry)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
