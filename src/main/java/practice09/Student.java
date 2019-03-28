@@ -2,15 +2,18 @@ package practice09;
 
 public class Student extends Person {
     private Klass klass;
-    private Student leader;
 
     public Student(int id, String name, int age, Klass klass) {
         super(id, name, age);
         this.klass = klass;
     }
 
-    public void assignLeader(Student student) {
-        leader = student;
+    public Klass getKlass() {
+        return klass;
+    }
+
+    public void setKlass(Klass klass) {
+        this.klass = klass;
     }
 
     @Override
