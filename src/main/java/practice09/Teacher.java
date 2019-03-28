@@ -19,4 +19,18 @@ public class Teacher extends Person {
     public void setKlass(Klass klass) {
         this.klass = klass;
     }
+
+    @Override
+    public String introduce() {
+        if (klass == null) {
+            return basicInfo() + " I teach No Class.";
+        } else {
+            return basicInfo() + " I teach " + klass.getDisplayName() + ".";
+        }
+
+    }
+
+    public String basicInfo() {
+        return super.introduce() + " I am a Teacher.";
+    }
 }
