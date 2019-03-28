@@ -22,6 +22,10 @@ public class Teacher extends Person {
 
     @Override
     public String introduce() {
-        return super.introduce()+" I am a Teacher. I teach "+klass.getDisplayName()+".";
+        if (klass == null) {
+            return super.introduce() + " I am a Teacher. I teach No Class.";
+        } else {
+            return super.introduce() + " I am a Teacher. I teach " + klass.getDisplayName() + ".";
+        }
     }
 }
