@@ -30,4 +30,9 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Person && ((Person) obj).getId() == this.id ? true : false;
+    }
 }
