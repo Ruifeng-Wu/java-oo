@@ -6,12 +6,12 @@ import java.util.Map;
 public class Klass {
     private int number;
     private Person leader;
-    private Map<Integer,Student> studentList;
+    private Map<Integer, Student> studentList;
 
 
     public Klass(int number) {
         this.number = number;
-        studentList=new HashMap<>();
+        studentList = new HashMap<>();
     }
 
     public int getNumber() {
@@ -23,21 +23,22 @@ public class Klass {
     }
 
     public void assignLeader(Student jerry) {
-        if (!studentList.containsKey(jerry.getId())){
+        if (!studentList.containsKey(jerry.getId())) {
             System.out.print("It is not one of us.\n");
             return;
         }
-        leader=jerry;
+        leader = jerry;
     }
 
-    public boolean isIn(Student student){
-        return number==student.getKlass().number?true:false;
+    public boolean isIn(Student student) {
+        return number == student.getKlass().number ? true : false;
     }
+
     public Person getLeader() {
         return leader;
     }
 
-    public void appendMember(Student student){
-        studentList.put(student.getId(),student);
+    public void appendMember(Student student) {
+        studentList.put(student.getId(), student);
     }
 }
