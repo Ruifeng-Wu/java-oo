@@ -36,4 +36,20 @@ public class Teacher extends Person {
     public String basicInfo() {
         return super.introduce() + " I am a Teacher.";
     }
+    public boolean isTeaching(Student jerry) {
+        for (Klass cls : linkedList) {
+            if (cls.isIn(jerry)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String introduceWith(Student jerry) {
+        if (isTeaching(jerry)) {
+            return basicInfo() + " I teach " + jerry.getName() + ".";
+        } else {
+            return basicInfo() + " I don't teach " + jerry.getName() + ".";
+        }
+    }
 }
