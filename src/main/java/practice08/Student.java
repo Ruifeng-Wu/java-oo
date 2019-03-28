@@ -18,6 +18,14 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
-        return super.introduce()+" I am a Student."+" I am at "+klass.getDisplayName()+".";
+        if (this.equals(klass.getLeader())) {
+            return getBasicInfo() + " I am Leader of " + klass.getDisplayName() + ".";
+        } else {
+            return getBasicInfo() + " I am at " + klass.getDisplayName() + ".";
+        }
+    }
+
+    public String getBasicInfo() {
+        return super.introduce() + " I am a Student.";
     }
 }
