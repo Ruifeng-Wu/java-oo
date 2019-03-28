@@ -7,4 +7,12 @@ public class Student extends Person{
         super(id, name, age);
         this.klass = klass;
     }
+
+    public Klass getKlass() {
+        return klass;
+    }
+
+    public void setKlass(Klass klass) {
+        this.klass = klass;
+    }
 }
