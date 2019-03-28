@@ -54,4 +54,12 @@ public class Teacher extends Person {
         }
         return false;
     }
+
+    public String introduceWith(Student jerry) {
+        if (isTeaching(jerry)) {
+            return basicInfo() + " I teach " + jerry.getName() + ".";
+        } else {
+            return basicInfo() + " I don't teach " + jerry.getName() + ".";
+        }
+    }
 }
