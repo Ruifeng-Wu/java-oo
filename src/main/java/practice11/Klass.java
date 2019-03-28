@@ -8,6 +8,7 @@ public class Klass {
     private int number;
     private Person leader;
     private Map<Integer, Student> studentList;
+    private Teacher teacher;
 
     public Klass(int number) {
         this.number = number;
@@ -28,6 +29,15 @@ public class Klass {
             return;
         }
         leader = jerry;
+        notifyTeacher(leader.getName() + " become Leader of " + getDisplayName() + ".");
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
     public boolean isIn(Student student) {
@@ -38,11 +48,15 @@ public class Klass {
         return leader;
     }
 
-    public void setLeader(Person leader) {
-        this.leader = leader;
-    }
 
     public void appendMember(Student student) {
         studentList.put(student.getId(), student);
+        notifyTeacher(student.getName() + " has joined " + getDisplayName() + ".");
+    }
+
+    public void notifyTeacher(String msg) {
+        if (teacher != null) {
+            teacher.reply(msg);
+        }
     }
 }

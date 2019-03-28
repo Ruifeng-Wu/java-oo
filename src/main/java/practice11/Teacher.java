@@ -13,6 +13,9 @@ public class Teacher extends Person {
     public Teacher(int id, String name, int age, LinkedList<Klass> linkedList) {
         super(id, name, age);
         this.linkedList = linkedList;
+        for (int i = 0; i < linkedList.size(); i++) {
+            linkedList.get(i).setTeacher(this);
+        }
     }
 
     public LinkedList<Klass> getClasses() {
@@ -36,6 +39,7 @@ public class Teacher extends Person {
     public String basicInfo() {
         return super.introduce() + " I am a Teacher.";
     }
+
     public boolean isTeaching(Student jerry) {
         for (Klass cls : linkedList) {
             if (cls.isIn(jerry)) {
@@ -51,5 +55,9 @@ public class Teacher extends Person {
         } else {
             return basicInfo() + " I don't teach " + jerry.getName() + ".";
         }
+    }
+
+    public void reply(String msg) {
+        System.out.print("I am " + getName() + ". I know " + msg + "\n");
     }
 }
