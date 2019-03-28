@@ -1,15 +1,12 @@
 package practice10;
 
-import practice09.Person;
-import practice09.Student;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class Klass {
     private int number;
-    private practice09.Person leader;
-    private Map<Integer,practice09.Student> studentList;
+    private Person leader;
+    private Map<Integer,Student> studentList;
 
 
     public Klass(int number) {
@@ -29,7 +26,7 @@ public class Klass {
         return "Class " + number;
     }
 
-    public void assignLeader(practice09.Student jerry) {
+    public void assignLeader(Student jerry) {
         if (!studentList.containsKey(jerry.getId())){
             System.out.print("It is not one of us.\n");
             return;
